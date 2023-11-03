@@ -1,21 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 5
+#define SIZE 4
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) {
+void square_array(int a[],int size){
 	int i;
-	int a[SIZE]={1,8,3,4,5};
-	int b[SIZE]={1,2,3,4,5};
-	int flag_same=1;
 	
 	for(i=0;i<SIZE;i++)
-	{
-		if(a[i]==b[i])
-			printf("%d번째 요소는 같다\n",i);
-		else 
-			printf("%d번째 요소는 a[%d]=%d,b[%d]=%d로 다르다\n",i,i,a[i],i,b[i]);
-	}
+		a[i]=a[i]*a[i];
+}
+void print_array(int a[],int size){
+	int i;
+	
+	for(i=0;i<SIZE;i++)
+		printf("%3d",a[i]);
+	printf("\n");
+}
+
+int main(void) 
+{
+	int list[SIZE]={1,2,3,4};
+	
+	print_array(list,SIZE);
+	square_array(list,SIZE);
+	print_array(list,SIZE);
 	
 	return 0;
 }
+
+
